@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+
+//use App\User;
+
+class Controller extends BaseController
+{
+    use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
+
+    public function success($code,$content)
+    {
+        return array('status' => 'ok', 'code' => $code, 'content' => $content);
+    }
+
+    public function error($code,$content)
+    {
+        return array('status' => 'error', 'code' => $code, 'content' => $content);
+    }
+
+//    public function current_user() {
+//        return User::getUserFromToken();
+//    }
+}
