@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            TipoPropiedad
+            Tipo Propiedad
         </h1>
     </section>
     <div class="content">
@@ -11,7 +11,7 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('admin.tipoPropiedads.show_fields')
-                    <a href="{!! route('admin.tipoPropiedads.index') !!}" class="btn btn-default">Back</a>
+                    <a href="{!! route('admin.tipoPropiedads.index') !!}" class="btn btn-default">Volver</a>
                 </div>
             </div>
         </div>

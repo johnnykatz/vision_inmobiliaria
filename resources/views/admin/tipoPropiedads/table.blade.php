@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="tipoPropiedads-table">
     <thead>
         <th>Nombre</th>
-        <th colspan="3">Action</th>
+        <th colspan="3">Acciones</th>
     </thead>
     <tbody>
     @foreach($tipoPropiedads as $tipoPropiedad)

@@ -57,6 +57,7 @@ Route::get('/admin/', ['middleware' => 'auth', function () {
 
 
 Route::get('/homeadmin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin']);
+Route::get('/admin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin']);
 
 
 Route::get('login', 'Auth\AuthController@getLogin');

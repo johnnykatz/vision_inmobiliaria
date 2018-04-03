@@ -6,7 +6,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateTipoPropiedadRequest;
 use App\Http\Requests\Admin\UpdateTipoPropiedadRequest;
 use App\Repositories\Admin\TipoPropiedadRepository;
-use App\Http\Controllers\Admin\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -60,7 +60,7 @@ class TipoPropiedadController extends InfyOmBaseController
 
         $tipoPropiedad = $this->tipoPropiedadRepository->create($input);
 
-        Flash::success('TipoPropiedad saved successfully.');
+        Flash::success('Tipo Propiedad guardado con exito.');
 
         return redirect(route('admin.tipoPropiedads.index'));
     }
@@ -125,7 +125,7 @@ class TipoPropiedadController extends InfyOmBaseController
 
         $tipoPropiedad = $this->tipoPropiedadRepository->update($request->all(), $id);
 
-        Flash::success('TipoPropiedad updated successfully.');
+        Flash::success('Tipo Propiedad guardado con exito.');
 
         return redirect(route('admin.tipoPropiedads.index'));
     }
@@ -149,7 +149,7 @@ class TipoPropiedadController extends InfyOmBaseController
 
         $this->tipoPropiedadRepository->delete($id);
 
-        Flash::success('TipoPropiedad deleted successfully.');
+        Flash::success('Tipo Propiedad eliminado con exito.');
 
         return redirect(route('admin.tipoPropiedads.index'));
     }
