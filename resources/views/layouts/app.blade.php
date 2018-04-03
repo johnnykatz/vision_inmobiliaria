@@ -74,7 +74,7 @@
         <!-- Main Header -->
         <header class="main-header">
 
-            <a href="{{ url('home') }}" class="logo">
+            <a href="{{ url('/homeadmin') }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>V</b>I</span>
                 <!-- logo for regular state and mobile devices -->
@@ -173,7 +173,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/homeadmin') }}">Home</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
