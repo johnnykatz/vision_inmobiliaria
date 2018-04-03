@@ -56,8 +56,8 @@ Route::get('/admin/', ['middleware' => 'auth', function () {
 }]);
 
 
-Route::get('/homeadmin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin']);
-Route::get('/admin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin']);
+Route::get('/homeadmin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin', 'middleware' => ['auth']]);
+Route::get('/admin', ['as' => 'admin.home', 'uses' => 'HomeController@homeAdmin', 'middleware' => ['auth']]);
 
 
 Route::get('login', 'Auth\AuthController@getLogin');
@@ -65,8 +65,8 @@ Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('logout', 'Auth\AuthController@logout');
 
 // Registration Routes...
-Route::get('register', 'Auth\AuthController@getRegister');
-Route::post('register', 'Auth\AuthController@postRegister');
+//Route::get('register', 'Auth\AuthController@getRegister');
+//Route::post('register', 'Auth\AuthController@postRegister');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\PasswordController@getEmail');
@@ -78,14 +78,14 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('admin/users/editPassword', ['as' => 'admin.users.editPassword', 'uses' => 'Admin\UserController@editPassword', 'middleware' => ['auth']]);
 Route::post('admin/users/updatePassword', ['as' => 'admin.users.updatePassword', 'uses' => 'Admin\UserController@updatePassword', 'middleware' => ['auth']]);
 
-Route::get('admin/users', ['as' => 'admin.users.index', 'uses' => 'Admin\UserController@index']);
-Route::post('admin/users', ['as' => 'admin.users.store', 'uses' => 'Admin\UserController@store']);
-Route::get('admin/users/create', ['as' => 'admin.users.create', 'uses' => 'Admin\UserController@create']);
-Route::put('admin/users/{users}', ['as' => 'admin.users.update', 'uses' => 'Admin\UserController@update']);
-Route::patch('admin/users/{users}', ['as' => 'admin.users.update', 'uses' => 'Admin\UserController@update']);
-Route::delete('admin/users/{users}', ['as' => 'admin.users.destroy', 'uses' => 'Admin\UserController@destroy']);
-Route::get('admin/users/{users}', ['as' => 'admin.users.show', 'uses' => 'Admin\UserController@show']);
-Route::get('admin/users/{users}/edit', ['as' => 'admin.users.edit', 'uses' => 'Admin\UserController@edit']);
+Route::get('admin/users', ['as' => 'admin.users.index', 'uses' => 'Admin\UserController@index', 'middleware' => ['auth']]);
+Route::post('admin/users', ['as' => 'admin.users.store', 'uses' => 'Admin\UserController@store', 'middleware' => ['auth']]);
+Route::get('admin/users/create', ['as' => 'admin.users.create', 'uses' => 'Admin\UserController@create', 'middleware' => ['auth']]);
+Route::put('admin/users/{users}', ['as' => 'admin.users.update', 'uses' => 'Admin\UserController@update', 'middleware' => ['auth']]);
+Route::patch('admin/users/{users}', ['as' => 'admin.users.update', 'uses' => 'Admin\UserController@update', 'middleware' => ['auth']]);
+Route::delete('admin/users/{users}', ['as' => 'admin.users.destroy', 'uses' => 'Admin\UserController@destroy', 'middleware' => ['auth']]);
+Route::get('admin/users/{users}', ['as' => 'admin.users.show', 'uses' => 'Admin\UserController@show', 'middleware' => ['auth']]);
+Route::get('admin/users/{users}/edit', ['as' => 'admin.users.edit', 'uses' => 'Admin\UserController@edit', 'middleware' => ['auth']]);
 
 
 Route::get('admin/estadoPropiedads', ['as' => 'admin.estadoPropiedads.index', 'uses' => 'Admin\EstadoPropiedadController@index']);
@@ -98,44 +98,44 @@ Route::get('admin/estadoPropiedads/{estadoPropiedads}', ['as' => 'admin.estadoPr
 Route::get('admin/estadoPropiedads/{estadoPropiedads}/edit', ['as' => 'admin.estadoPropiedads.edit', 'uses' => 'Admin\EstadoPropiedadController@edit']);
 
 
-Route::get('admin/tipoPropiedads', ['as' => 'admin.tipoPropiedads.index', 'uses' => 'Admin\TipoPropiedadController@index']);
-Route::post('admin/tipoPropiedads', ['as' => 'admin.tipoPropiedads.store', 'uses' => 'Admin\TipoPropiedadController@store']);
-Route::get('admin/tipoPropiedads/create', ['as' => 'admin.tipoPropiedads.create', 'uses' => 'Admin\TipoPropiedadController@create']);
-Route::put('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.update', 'uses' => 'Admin\TipoPropiedadController@update']);
-Route::patch('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.update', 'uses' => 'Admin\TipoPropiedadController@update']);
-Route::delete('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.destroy', 'uses' => 'Admin\TipoPropiedadController@destroy']);
-Route::get('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.show', 'uses' => 'Admin\TipoPropiedadController@show']);
-Route::get('admin/tipoPropiedads/{tipoPropiedads}/edit', ['as' => 'admin.tipoPropiedads.edit', 'uses' => 'Admin\TipoPropiedadController@edit']);
+Route::get('admin/tipoPropiedads', ['as' => 'admin.tipoPropiedads.index', 'uses' => 'Admin\TipoPropiedadController@index', 'middleware' => ['auth']]);
+Route::post('admin/tipoPropiedads', ['as' => 'admin.tipoPropiedads.store', 'uses' => 'Admin\TipoPropiedadController@store', 'middleware' => ['auth']]);
+Route::get('admin/tipoPropiedads/create', ['as' => 'admin.tipoPropiedads.create', 'uses' => 'Admin\TipoPropiedadController@create', 'middleware' => ['auth']]);
+Route::put('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.update', 'uses' => 'Admin\TipoPropiedadController@update', 'middleware' => ['auth']]);
+Route::patch('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.update', 'uses' => 'Admin\TipoPropiedadController@update', 'middleware' => ['auth']]);
+Route::delete('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.destroy', 'uses' => 'Admin\TipoPropiedadController@destroy', 'middleware' => ['auth']]);
+Route::get('admin/tipoPropiedads/{tipoPropiedads}', ['as' => 'admin.tipoPropiedads.show', 'uses' => 'Admin\TipoPropiedadController@show', 'middleware' => ['auth']]);
+Route::get('admin/tipoPropiedads/{tipoPropiedads}/edit', ['as' => 'admin.tipoPropiedads.edit', 'uses' => 'Admin\TipoPropiedadController@edit', 'middleware' => ['auth']]);
 
 
-Route::get('admin/tipoOperacions', ['as' => 'admin.tipoOperacions.index', 'uses' => 'Admin\TipoOperacionController@index']);
-Route::post('admin/tipoOperacions', ['as' => 'admin.tipoOperacions.store', 'uses' => 'Admin\TipoOperacionController@store']);
-Route::get('admin/tipoOperacions/create', ['as' => 'admin.tipoOperacions.create', 'uses' => 'Admin\TipoOperacionController@create']);
-Route::put('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.update', 'uses' => 'Admin\TipoOperacionController@update']);
-Route::patch('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.update', 'uses' => 'Admin\TipoOperacionController@update']);
-Route::delete('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.destroy', 'uses' => 'Admin\TipoOperacionController@destroy']);
-Route::get('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.show', 'uses' => 'Admin\TipoOperacionController@show']);
-Route::get('admin/tipoOperacions/{tipoOperacions}/edit', ['as' => 'admin.tipoOperacions.edit', 'uses' => 'Admin\TipoOperacionController@edit']);
+Route::get('admin/tipoOperacions', ['as' => 'admin.tipoOperacions.index', 'uses' => 'Admin\TipoOperacionController@index', 'middleware' => ['auth']]);
+Route::post('admin/tipoOperacions', ['as' => 'admin.tipoOperacions.store', 'uses' => 'Admin\TipoOperacionController@store', 'middleware' => ['auth']]);
+Route::get('admin/tipoOperacions/create', ['as' => 'admin.tipoOperacions.create', 'uses' => 'Admin\TipoOperacionController@create', 'middleware' => ['auth']]);
+Route::put('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.update', 'uses' => 'Admin\TipoOperacionController@update', 'middleware' => ['auth']]);
+Route::patch('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.update', 'uses' => 'Admin\TipoOperacionController@update', 'middleware' => ['auth']]);
+Route::delete('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.destroy', 'uses' => 'Admin\TipoOperacionController@destroy', 'middleware' => ['auth']]);
+Route::get('admin/tipoOperacions/{tipoOperacions}', ['as' => 'admin.tipoOperacions.show', 'uses' => 'Admin\TipoOperacionController@show', 'middleware' => ['auth']]);
+Route::get('admin/tipoOperacions/{tipoOperacions}/edit', ['as' => 'admin.tipoOperacions.edit', 'uses' => 'Admin\TipoOperacionController@edit', 'middleware' => ['auth']]);
 
 
-Route::get('admin/tipoMedia', ['as' => 'admin.tipoMedia.index', 'uses' => 'Admin\TipoMediaController@index']);
-Route::post('admin/tipoMedia', ['as' => 'admin.tipoMedia.store', 'uses' => 'Admin\TipoMediaController@store']);
-Route::get('admin/tipoMedia/create', ['as' => 'admin.tipoMedia.create', 'uses' => 'Admin\TipoMediaController@create']);
-Route::put('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.update', 'uses' => 'Admin\TipoMediaController@update']);
-Route::patch('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.update', 'uses' => 'Admin\TipoMediaController@update']);
-Route::delete('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.destroy', 'uses' => 'Admin\TipoMediaController@destroy']);
-Route::get('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.show', 'uses' => 'Admin\TipoMediaController@show']);
-Route::get('admin/tipoMedia/{tipoMedia}/edit', ['as' => 'admin.tipoMedia.edit', 'uses' => 'Admin\TipoMediaController@edit']);
+Route::get('admin/tipoMedia', ['as' => 'admin.tipoMedia.index', 'uses' => 'Admin\TipoMediaController@index', 'middleware' => ['auth']]);
+Route::post('admin/tipoMedia', ['as' => 'admin.tipoMedia.store', 'uses' => 'Admin\TipoMediaController@store', 'middleware' => ['auth']]);
+Route::get('admin/tipoMedia/create', ['as' => 'admin.tipoMedia.create', 'uses' => 'Admin\TipoMediaController@create', 'middleware' => ['auth']]);
+Route::put('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.update', 'uses' => 'Admin\TipoMediaController@update', 'middleware' => ['auth']]);
+Route::patch('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.update', 'uses' => 'Admin\TipoMediaController@update', 'middleware' => ['auth']]);
+Route::delete('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.destroy', 'uses' => 'Admin\TipoMediaController@destroy', 'middleware' => ['auth']]);
+Route::get('admin/tipoMedia/{tipoMedia}', ['as' => 'admin.tipoMedia.show', 'uses' => 'Admin\TipoMediaController@show', 'middleware' => ['auth']]);
+Route::get('admin/tipoMedia/{tipoMedia}/edit', ['as' => 'admin.tipoMedia.edit', 'uses' => 'Admin\TipoMediaController@edit', 'middleware' => ['auth']]);
 
 
-Route::get('admin/media', ['as' => 'admin.media.index', 'uses' => 'Admin\MediaController@index']);
-Route::post('admin/media', ['as' => 'admin.media.store', 'uses' => 'Admin\MediaController@store']);
-Route::get('admin/media/create', ['as' => 'admin.media.create', 'uses' => 'Admin\MediaController@create']);
-Route::put('admin/media/{media}', ['as' => 'admin.media.update', 'uses' => 'Admin\MediaController@update']);
-Route::patch('admin/media/{media}', ['as' => 'admin.media.update', 'uses' => 'Admin\MediaController@update']);
-Route::delete('admin/media/{media}', ['as' => 'admin.media.destroy', 'uses' => 'Admin\MediaController@destroy']);
-Route::get('admin/media/{media}', ['as' => 'admin.media.show', 'uses' => 'Admin\MediaController@show']);
-Route::get('admin/media/{media}/edit', ['as' => 'admin.media.edit', 'uses' => 'Admin\MediaController@edit']);
+Route::get('admin/media', ['as' => 'admin.media.index', 'uses' => 'Admin\MediaController@index', 'middleware' => ['auth']]);
+Route::post('admin/media', ['as' => 'admin.media.store', 'uses' => 'Admin\MediaController@store', 'middleware' => ['auth']]);
+Route::get('admin/media/create', ['as' => 'admin.media.create', 'uses' => 'Admin\MediaController@create', 'middleware' => ['auth']]);
+Route::put('admin/media/{media}', ['as' => 'admin.media.update', 'uses' => 'Admin\MediaController@update', 'middleware' => ['auth']]);
+Route::patch('admin/media/{media}', ['as' => 'admin.media.update', 'uses' => 'Admin\MediaController@update', 'middleware' => ['auth']]);
+Route::delete('admin/media/{media}', ['as' => 'admin.media.destroy', 'uses' => 'Admin\MediaController@destroy', 'middleware' => ['auth']]);
+Route::get('admin/media/{media}', ['as' => 'admin.media.show', 'uses' => 'Admin\MediaController@show', 'middleware' => ['auth']]);
+Route::get('admin/media/{media}/edit', ['as' => 'admin.media.edit', 'uses' => 'Admin\MediaController@edit', 'middleware' => ['auth']]);
 
 
 Route::get('admin/propiedads', ['as' => 'admin.propiedads.index', 'uses' => 'Admin\PropiedadController@index', 'middleware' => ['auth']]);
