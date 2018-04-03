@@ -31,7 +31,7 @@
                 <td>{!! $propiedad->tipoPropiedad->nombre or null !!}</td>
                 <td>{!! $propiedad->tipoOperacion->nombre !!}</td>
                 <td>{!! "$ ".number_format($propiedad->precio,"2",".",",") !!}</td>
-                <td>{!! $propiedad->descripcion !!}</td>
+                <td>{!! substr($propiedad->descripcion, 0, 100)."....." !!}</td>
                 <td>{!! $propiedad->latitud !!}</td>
                 <td>{!! $propiedad->longitud !!}</td>
                 <td>{!! $propiedad->cant_habitaciones !!}</td>
