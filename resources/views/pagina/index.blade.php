@@ -124,7 +124,9 @@
         <div class="row">
             <div class="col-lg-6 col-sm-9 recent-view">
                 <h3>Acerca de</h3>
-                <p>somos un grupo de amigos que nos gusta la bara<br><a href="{!! route('pagina.about') !!}">Leer
+                <p>Empresa de servicios dedicada a la intermediación entre la oferta y la demanda Inmobiliaria.
+
+                    <br><a href="{!! route('pagina.about') !!}">Leer
                         Mas</a></p>
 
             </div>

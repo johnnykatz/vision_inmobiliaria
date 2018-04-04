@@ -17,6 +17,9 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+ini_set('upload_max_filesize', '5M');
+ini_set("memory_limit", "1000M");
+set_time_limit(0);
 class PropiedadController extends InfyOmBaseController
 {
     /** @var  PropiedadRepository */
@@ -66,6 +69,9 @@ class PropiedadController extends InfyOmBaseController
      */
     public function store(CreatePropiedadRequest $request)
     {
+        ini_set('upload_max_filesize', '5M');
+        ini_set("memory_limit", "1000M");
+        set_time_limit(0);
         $input = $request->all();
 //dd($request);
         $propiedad = $this->propiedadRepository->create($input);
