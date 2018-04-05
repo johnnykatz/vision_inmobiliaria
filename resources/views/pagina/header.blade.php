@@ -77,8 +77,8 @@
     <div class="header">
         {{--<div class="col-sm-12 col-sm-12">--}}
 
-        <a href="{!! route('pagina.index') !!}"><img style="width: 200px;height: 100px"
-                                                     src="{!! asset("images/logo-1.jpg")!!}" alt="Realestate"></a>
+        <a href="{!! route('pagina.index') !!}"><img style="width: 350px;height: 100px"
+                                                     src="{!! asset("imagenes/logo-nuevo.jpeg")!!}" alt="Realestate"></a>
         <ul class="pull-right">
             <li><a href="{!! route('pagina.list', ['tipo_operacion_id'=>2]) !!}">Ventas</a></li>
             <li><a href="{!! route('pagina.list', ['tipo_operacion_id'=>1]) !!}">Alquileres</a></li>
