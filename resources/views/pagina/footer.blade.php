@@ -25,7 +25,7 @@
 
             <div class="col-lg-3 col-sm-3">
                 <h4>Seguinos</h4>
-                <a href="https://www.facebook.com/VisionInmobiliariaPos/" target="_blank"><img src="{!! asset("images/facebook.png") !!}"
+                <a href="https://www.facebook.com/VisionInmobiliariaPos/" target="_blank"><img style="width: 40px" src="{!! asset("images/face-icon.png") !!}"
                                                                                                alt="facebook"></a>
                 {{--<a href="#"><img src="images/twitter.png" alt="twitter"></a>--}}
                 {{--<a href="#"><img src="images/linkedin.png" alt="linkedin"></a>--}}
