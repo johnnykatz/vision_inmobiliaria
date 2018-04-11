@@ -23,13 +23,13 @@
             {{--<button class="btn btn-success" type="button">Notify Me!</button></form>--}}
             {{--</div>--}}
 
-            <div class="col-lg-3 col-sm-3">
+            <div class="col-lg-4 col-sm-4">
                 <h4>Seguinos</h4>
-                <a href="https://www.facebook.com/VisionInmobiliariaPos/" target="_blank"><img style="width: 40px" src="{!! asset("images/face-icon.png") !!}"
-                                                                                               alt="facebook"></a>
-                {{--<a href="#"><img src="images/twitter.png" alt="twitter"></a>--}}
-                {{--<a href="#"><img src="images/linkedin.png" alt="linkedin"></a>--}}
-                {{--<a href="#"><img src="images/instagram.png" alt="instagram"></a>--}}
+                {{--<a href="https://www.facebook.com/VisionInmobiliariaPos/" target="_blank"><img style="width: 40px" src="{!! asset("images/face-icon.png") !!}"--}}
+                                                                                               {{--alt="facebook"></a>--}}
+
+                <div class="fb-page" data-href="https://www.facebook.com/visioninmobiliariapos/" data-tabs="timeline" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/visioninmobiliariapos/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/visioninmobiliariapos/">Vision Inmobiliaria</a></blockquote></div>
+
             </div>
 
             <div class="col-lg-3 col-sm-3">
