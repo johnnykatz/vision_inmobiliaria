@@ -197,5 +197,29 @@ class HomeController extends Controller
             ->orderBy("p.created_at", "DESC")->limit(6)->get();
     }
 
+    function enviarMailContacto(Request $request)
+    {
+
+            $datos = ' Nombre y Apellido : ' . $request['nombre'] . ' - Telefono : ' . $request['telefono'] . ' - Mensaje: ' . $request['mensaje'] . ' - Mail: ' . $request['mail'];
+
+            //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
+            \Mail::raw($datos, function ($message) use ($request) {
+                $message->from($request['mail'], $request['nombre']);
+                $message->subject('Contacto desde la Web');
+                $message->to(env('CONTACT_MAIL'));
+            });
+            return response()->json(true);
+
+
+
+//
+//        Mail::raw($request['mensaje'], function ($message) use ($request) {
+//            $message->from('notificacionessistemasweb@gmail.com', $request->email);
+//            $message->subject("Consulta desde la Web");
+//            $message->to($request->email);
+//        });
+//        return view('pagina.contact');
+
+    }
 
 }

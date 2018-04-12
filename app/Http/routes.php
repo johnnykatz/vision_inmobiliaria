@@ -16,12 +16,14 @@ header('Access-Control-Allow-Origin: *');
 //    return view('pagina.index');
 //});
 Route::get('/', ['as' => 'pagina.index', 'uses' => 'HomeController@index']);
-Route::get('/contact', ['as' => 'pagina.contact', 'uses' => 'HomeController@agents']);
+Route::get('/contact', ['as' => 'pagina.contact', 'uses' => 'HomeController@contact']);
 Route::get('/agents', ['as' => 'pagina.agents', 'uses' => 'HomeController@agents']);
 Route::get('/about', ['as' => 'pagina.about', 'uses' => 'HomeController@about']);
 Route::get('/list', ['as' => 'pagina.list', 'uses' => 'HomeController@listado']);
 Route::get('/tasaciones', ['as' => 'pagina.tasaciones', 'uses' => 'HomeController@tasaciones']);
 Route::get('/administramos', ['as' => 'pagina.administramos', 'uses' => 'HomeController@administramos']);
+
+Route::get('/enviar-mail-contacto', ['as' => 'pagina.enviar-mail-contacto', 'uses' => 'HomeController@enviarMailContacto']);
 
 
 Route::get('/property-detail/{propiedad}', ['as' => 'pagina.property-detail', 'uses' => 'HomeController@property_detail']);
