@@ -6,7 +6,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateTipoOperacionRequest;
 use App\Http\Requests\Admin\UpdateTipoOperacionRequest;
 use App\Repositories\Admin\TipoOperacionRepository;
-use App\Http\Controllers\Admin\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

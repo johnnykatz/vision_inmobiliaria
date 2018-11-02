@@ -6,7 +6,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateEstadoPropiedadRequest;
 use App\Http\Requests\Admin\UpdateEstadoPropiedadRequest;
 use App\Repositories\Admin\EstadoPropiedadRepository;
-use App\Http\Controllers\Admin\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

@@ -6,7 +6,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateTipoMediaRequest;
 use App\Http\Requests\Admin\UpdateTipoMediaRequest;
 use App\Repositories\Admin\TipoMediaRepository;
-use App\Http\Controllers\Admin\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;

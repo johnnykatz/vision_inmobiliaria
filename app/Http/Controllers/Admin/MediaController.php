@@ -6,7 +6,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateMediaRequest;
 use App\Http\Requests\Admin\UpdateMediaRequest;
 use App\Repositories\Admin\MediaRepository;
-use App\Http\Controllers\Admin\AppBaseController as InfyOmBaseController;
+use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
